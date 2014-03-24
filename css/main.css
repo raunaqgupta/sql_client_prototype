@@ -1,0 +1,398 @@
+html,
+button,
+input,
+select,
+textarea {
+  color: #222; }
+
+body {
+  font-size: 1em;
+  line-height: 1.4; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+img {
+  vertical-align: middle; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px; }
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+.invisible {
+  visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/* ==========================================================================
+   Bootstrap overrides
+   ========================================================================== */
+.dropdown-menu {
+  background: #eee; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; }
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("../../fonts/glyphicons-halflings-regular.eot");
+  src: url("../../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+
+body {
+  background: tomato; }
+
+.link {
+  color: cadetblue;
+  font-size: 1rem; }
+  .link:hover {
+    cursor: pointer; }
+
+.title {
+  font-size: 1.4rem;
+  margin: 10px 0; }
+  .title .glyphicon {
+    vertical-align: super; }
+
+#header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #2c3e50;
+  color: white;
+  z-index: 999;
+  border-bottom: 1px solid  #2c3e50; }
+  #header #logo {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    width: 23%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 1.8rem; }
+  #header #rest-of-header {
+    position: absolute;
+    top: 0;
+    right: 20px; }
+    #header #rest-of-header div {
+      display: inline-block;
+      height: 60px;
+      line-height: 60px;
+      padding: 0 20px;
+      border-bottom: 1px solid  #2c3e50; }
+      #header #rest-of-header div:hover {
+        cursor: pointer;
+        background: #ddd;
+        color: #66CCFF; }
+    #header #rest-of-header #app-settings span {
+      font-size: 1.4rem;
+      vertical-align: sub; }
+
+#datastore-sidebar {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 23%;
+  border-right: 1px solid  #2c3e50;
+  padding: 10px;
+  overflow: hidden; }
+  #datastore-sidebar #datastore-search {
+    position: relative; }
+    #datastore-sidebar #datastore-search input {
+      font-size: 1.3rem;
+      padding: 5px;
+      width: 100%;
+      color: #aaa; }
+    #datastore-sidebar #datastore-search:after {
+      position: absolute;
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e003";
+      top: 12px;
+      right: 12px; }
+  #datastore-sidebar #datastore-list {
+    position: absolute;
+    width: 293px;
+    top: 110px;
+    bottom: 0;
+    overflow-y: scroll; }
+    #datastore-sidebar #datastore-list .dbname {
+      position: relative;
+      margin: 0;
+      padding: 10px;
+      background: #eaeaea;
+      font-weight: 700;
+      border: 1px solid #ccc; }
+      #datastore-sidebar #datastore-list .dbname:hover {
+        cursor: pointer; }
+      #datastore-sidebar #datastore-list .dbname:after {
+        position: absolute;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\2b";
+        right: 5px;
+        top: 13px; }
+    #datastore-sidebar #datastore-list ul {
+      margin: 0;
+      padding: 0; }
+    #datastore-sidebar #datastore-list .tablename {
+      position: relative;
+      list-style: none;
+      padding: 5px;
+      background: #fff;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc; }
+      #datastore-sidebar #datastore-list .tablename:hover {
+        cursor: move;
+        background: #ddd; }
+      #datastore-sidebar #datastore-list .tablename:after {
+        position: absolute;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\e011";
+        top: 8px;
+        right: 5px; }
+
+#query-space {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 23%;
+  width: 77%;
+  background: #eee;
+  overflow: hidden; }
+  #query-space #query-tabs {
+    margin: 0;
+    background: #aaa; }
+    #query-space #query-tabs li a {
+      background: #eee;
+      color: #18bc9c;
+      border-radius: 0; }
+    #query-space #query-tabs li.active a {
+      background: #fff;
+      border: 1px solid #fff; }
+  #query-space #query-builder-space {
+    background: white; }
+    #query-space #query-builder-space #action-bar {
+      position: relative;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 20px; }
+      #query-space #query-builder-space #action-bar #wizard-type-dropdown {
+        display: inline-block;
+        width: 150px; }
+      #query-space #query-builder-space #action-bar #switch-view {
+        position: absolute;
+        right: 20px;
+        top: 4px; }
+    #query-space #query-builder-space #query-breadcrumb {
+      margin: 0;
+      padding-left: 30px;
+      border-radius: 0;
+      background: #fff; }
+    #query-space #query-builder-space #query-builder {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      top: 133px;
+      overflow-y: scroll;
+      border-top: 1px solid #2c3e50; }
+      #query-space #query-builder-space #query-builder ul {
+        list-style: none;
+        padding: 0 30px; }
+      #query-space #query-builder-space #query-builder .selected-table {
+        margin-bottom: 20px; }
+        #query-space #query-builder-space #query-builder .selected-table p {
+          margin: 0; }
+        #query-space #query-builder-space #query-builder .selected-table .selected-tablename {
+          font-size: 1.4rem; }
+        #query-space #query-builder-space #query-builder .selected-table .info {
+          font-size: 0.9rem;
+          margin-bottom: 10px; }
+        #query-space #query-builder-space #query-builder .selected-table .columns {
+          background: #fff;
+          border-radius: 4px;
+          padding: 10px; }
+          #query-space #query-builder-space #query-builder .selected-table .columns .col {
+            position: relative;
+            display: inline-block;
+            background: lightsteelblue;
+            padding: 5px;
+            border-radius: 4px; }
+            #query-space #query-builder-space #query-builder .selected-table .columns .col:after {
+              position: absolute;
+              display: inline-block;
+              font-family: 'Glyphicons Halflings';
+              font-style: normal;
+              font-weight: normal;
+              line-height: 1;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              position: relative;
+              content: "\e088";
+              float: right;
+              top: 4px;
+              margin-left: 10px; }
+    #query-space #query-builder-space #output-space {
+      position: absolute;
+      width: 100%;
+      bottom: 0; }
+      #query-space #query-builder-space #output-space #output-header {
+        background: #ddd;
+        height: 30px;
+        line-height: 30px;
+        border-top: 1px solid #2c3e50;
+        padding: 0 10px; }
+        #query-space #query-builder-space #output-space #output-header:hover {
+          cursor: pointer; }
+      #query-space #query-builder-space #output-space #output-content {
+        background: #fff; }
+        #query-space #query-builder-space #output-space #output-content.active {
+          height: 300px; }
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */ }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }

@@ -1,0 +1,19 @@
+@mixin glyphicon-properties {
+    position: absolute;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin user-select($option) {
+    -webkit-touch-callout: $option;
+    -webkit-user-select: $option;
+    -khtml-user-select: $option;
+    -moz-user-select: $option;
+    -ms-user-select: $option;
+    user-select: $option;
+}

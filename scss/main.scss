@@ -1,0 +1,310 @@
+@import "h5bp";
+@import "mixins";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../../fonts/glyphicons-halflings-regular.eot');
+  src: url('../../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+body {
+    background: tomato;
+}
+
+.link {
+    color: cadetblue;
+    font-size: 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.title {
+    font-size: 1.4rem;
+    margin: 10px 0;
+
+    .glyphicon {
+        vertical-align: super;
+    }
+}
+
+$header_height: 60px;
+
+#header {
+    position: relative;
+    width: 100%;
+    height: $header_height;
+    background: #2c3e50;
+    color: white;
+    z-index: 999;
+    border-bottom: 1px solid  #2c3e50;
+
+    #logo {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        width: 23%;
+        height: 100%;
+        line-height: $header_height;
+        font-size: 1.8rem;
+    }
+
+    #rest-of-header {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        div {
+            display: inline-block;
+            height: $header_height;
+            line-height: $header_height;
+            padding: 0 20px;
+            border-bottom: 1px solid  #2c3e50;
+
+            &:hover {
+                cursor: pointer;
+                background: #ddd;
+                color: #66CCFF;
+            }
+        }
+
+        #app-settings {
+            span {
+                font-size: 1.4rem;
+                vertical-align: sub;
+            }
+        }
+    }
+}
+
+#datastore-sidebar {
+    position: absolute;
+    top: $header_height;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 23%;
+    border-right: 1px solid  #2c3e50;
+    padding: 10px;
+    overflow: hidden;
+
+    #datastore-search {
+        position: relative;
+
+        input {
+            font-size: 1.3rem;
+            padding: 5px;
+            width: 100%;
+            color: #aaa;
+        }
+
+        &:after {
+            @include glyphicon-properties;
+            content: "\e003"; // search icon
+            top: 12px;
+            right: 12px;
+        }
+    }
+
+    #datastore-list {
+        position: absolute;
+        width: 293px;
+        top: 110px;
+        bottom: 0;
+        overflow-y: scroll;
+
+        .dbname {
+            position: relative;
+            margin: 0;
+            padding: 10px;
+            background: #eaeaea;
+            font-weight: 700;
+            border: 1px solid #ccc;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:after {
+                @include glyphicon-properties;
+                content: "\2b"; //plus icon
+                right: 5px;
+                top: 13px;
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tablename {
+            position: relative;
+            list-style: none;
+            padding: 5px;
+            background: #fff;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            &:hover {
+                cursor: move;
+                background: #ddd;
+            }
+
+            &:after {
+                @include glyphicon-properties;
+                content: "\e011";
+                top: 8px;
+                right: 5px;
+            }
+        }
+    }
+
+}
+
+#query-space {
+    position: absolute;
+    top: $header_height;
+    bottom: 0;
+    left: 23%;
+    width: 77%;
+    background: #eee;
+    overflow: hidden;
+
+    #query-tabs {
+        margin: 0;
+        background: #aaa;
+
+        li {
+            a {
+                background: #eee;
+                color: #18bc9c;
+                border-radius: 0;
+            }
+
+            &.active {
+                a {
+                    background: #fff;
+                    border: 1px solid #fff;
+                }
+            }
+        }
+    }
+
+    #query-builder-space {
+        background: white;
+
+        #action-bar {
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+
+            #wizard-type-dropdown {
+                display: inline-block;
+                width: 150px;
+            }
+
+            #switch-view {
+                position: absolute;
+                right: 20px;
+                top: 4px;
+            }
+        }
+
+        #query-breadcrumb {
+            margin: 0;
+            padding-left: 30px;
+            border-radius: 0;
+            background: #fff;
+        }
+
+        #query-builder {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            top: 133px;
+            overflow-y: scroll;
+            border-top: 1px solid #2c3e50;
+
+            ul {
+                list-style: none;
+                padding: 0 30px;
+            }
+
+            .selected-table {
+                margin-bottom: 20px;
+                p {
+                    margin: 0
+                }
+
+                .selected-tablename {
+                    font-size: 1.4rem;
+                }
+
+                .info {
+                    font-size: 0.9rem;
+                    margin-bottom: 10px;
+                }
+
+                .columns {
+                    background: #fff;
+                    border-radius: 4px;
+                    padding: 10px;
+
+                    .col {
+                        position: relative;
+                        display: inline-block;
+                        background: lightsteelblue;
+                        padding: 5px;
+                        border-radius: 4px;
+
+                        &:after {
+                            @include glyphicon-properties;
+                            position: relative;
+                            content: "\e088";
+                            float: right;
+                            top: 4px;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        #output-space {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+
+            #output-header {
+                background: #ddd;
+                height: 30px;
+                line-height: 30px;
+                border-top: 1px solid #2c3e50;
+                padding: 0 10px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            #output-content {
+                background: #fff;
+                &.active {
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
+
+@import "media_query_print";
